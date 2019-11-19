@@ -14,12 +14,12 @@ class CTriangle extends CShape
   
   public void show()
   {
-     system.out.println("Triangle is "+color+", and the area is "+area+".");
+     System.out.println("Triangle is "+color+", and the area is "+area+".");
   }
 }
 
-class test(){
-  public static void main(string args[]){
+class test{
+  public static void main(String args[]){
      CTriangle c = new CTriangle(3, 4, 5);
      c.setColor("Red");
      c.show();
