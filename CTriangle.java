@@ -1,27 +1,62 @@
-
-class CTriangle extends CShape
+interface Shape
 {
-  protected double a, b, c;
-  protected double area;
-  
-  public CTriangle(double length, double width, double height)
+  abstract double getArea();
+}
+
+class Rectangle implements Shape
+{
+  double length;
+  double width;
+
+  public Rectangle(double l, double w)
   {
-    a = length;
-    b = width;
-    c = height;
-    area = a*b*0.5;
+    this.length = l;
+    this.width = w;
   }
   
-  public void show()
+  public double getArea()
   {
-     System.out.println("Triangle is "+color+", and the area is "+area+".");
+    return length*width;
+  }
+
+  public String toString()
+  {
+    return "矩形面積為: "+ String.valueOf(length*width);
   }
 }
 
-class test{
-  public static void main(String args[]){
-     CTriangle c = new CTriangle(3, 4, 5);
-     c.setColor("Red");
-     c.show();
+
+class Triangle implements Shape
+{
+  double base;
+  double height;
+
+  public Triangle(double b, double h)
+  {
+    this.base = b;
+    this.height = h;
+  }
+  
+  public double getArea()
+  {
+    return base*height*0.5;
+  }
+
+  public String toString()
+  {
+    double area = getArea();
+    return "矩形面積為: "+ String.valueOf(area);
+  }
+}
+
+class test()
+{
+  public static void main(String args[])
+  {
+     Rectangle r = new Rectangle(3.5, 5.6);
+     r.toString();
+
+     Triangle t = new Triangle(5.6, 4.4);
+     t.toString();
   }
 }
